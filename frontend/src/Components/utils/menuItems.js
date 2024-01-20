@@ -9,9 +9,9 @@ export const menuItems = [
     },
     {
     id:2,
-    title:'View Transactions',
+    title:'Feedback',
     icon: transactions,
-    link: '/dashboard'
+    link: '/form'
     },
     {
     id:3,

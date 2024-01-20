@@ -15,9 +15,9 @@ export const menuItems = [
     },
     {
     id:3,
-    title:'Incomes',
+    title:'Experience Form',
     icon: trend,
-    link: '/dashboard'
+    link: '/experience-form'
     },
     {
     id:4,

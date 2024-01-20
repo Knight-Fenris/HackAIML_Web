@@ -9,6 +9,7 @@ import Incomes from './Components/Incomes/Incomes';
 import Expenses from './Components/Expenses/Expenses';
 import { useGlobalContext } from './Context/globalContext';
 import Form_Feedback from './Components/Form/Form_Feedback';
+import Ex_Form from './Components/Form/Exp_Form';
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
       case 2:
         return <Form_Feedback/>
       case 3:
-        return <Incomes/>
+        return <Ex_Form/>
       case 4:
         return <Expenses/>
       default:

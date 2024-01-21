@@ -141,6 +141,35 @@ const DashboardStyled = styled.div`
                 }
             }
         }
+        @media(max-width:512px){
+          //border: 2px solid green;
+          width:100%;
+          height: 10%;
+          font-size:30%;
+          display: block;
+          border-radius: 0 0px 0px 0;
+
+          InnerLayout{
+            margin-top:5%;
+            border: 2px solid green;
+          }
+        }
+        @media(min-width:512px) and (max-width:1024px){
+          //border: 2px solid green;
+          width:100%;
+          height: 10%;
+          font-size:50%;
+          display: block;
+          border-radius: 0 0px 0px 0;
+          chart{
+            border: 2px solid blue;
+          }
+
+          InnerLayout{
+            margin-top:5%;
+            border: 2px solid green;
+          }
+        }
     }
 `
 

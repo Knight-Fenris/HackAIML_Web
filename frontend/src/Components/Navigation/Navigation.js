@@ -8,6 +8,7 @@ function Navigation({active,setActive}) {
   return (
     
     <NavStyled>
+      <div className='nav-container'>
       <div className="user-con">
         <img src={avatar} alt =''/>
         <div className="text">
@@ -29,6 +30,7 @@ function Navigation({active,setActive}) {
         <li>
             {signout} Sign Out
         </li>
+      </div>
       </div>
     </NavStyled>
   )
@@ -108,6 +110,125 @@ const NavStyled = styled.nav`
         border-radius: 0 10px 10px 0;
       }
     }
+    @media(max-width:512px){
+      width:100%;
+      height: 10%;
+      font-size:30%;
+      display: block;
+      border-radius: 0 0px 0px 0;
+      padding-bottom: 10%;
+
+      .menu-items{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        // background-color: blue;
+        font-size:0.5rem;
+        li{
+          border:2px solid green;
+          width:50px;
+          height:50px;
+
+          position: relative;
+          bottom:20%;
+          right:30%;
+          display: grid;
+          align-items: center;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all .4s ease-in-out;
+          color: rgba(34, 34, 96, .6);
+          position: relative;
+          i{
+
+              border: 2px solid blue;
+              width:10px;
+              postion:relative;
+              opacity:0;
+              color: rgba(34, 34, 96, 0.6);
+              font-size: 0.5rem;
+              
+              transition: all .4s ease-in-out;
+          }
+        }
+      }
+      .nav-container{
+        // background-color: red;
+        display: flex;
+
+      }
+      .menu-items{
+        font-size: 10px;
+        margin-left:5%;
+      }
+      .text{
+        font-size:10px;
+        border:2px solid green;
+        postion: relative;
+        bottom:30%;
+      }
+      .bottom-nav{
+        font-size:10px;
+      }
+      img{
+        position: relative;
+        bottom:40px;
+        right:20px;
+
+      }
+    }
+
+    @media(min-width:512px) and (max-width:1024px){
+      width:100%;
+      height: 10%;
+      font-size:50%;
+      display: block;
+      border-radius: 0 0px 0px 0;
+      padding-bottom: 10%;
+
+      .menu-items{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        // background-color: blue;
+        li{
+          display: grid;
+          grid-template-columns: 40px auto;
+          align-items: center;
+          margin: .6rem 0;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all .4s ease-in-out;
+          color: rgba(34, 34, 96, .6);
+          padding-left: 1rem;
+          position: relative;
+          i{
+              color: rgba(34, 34, 96, 0.6);
+              font-size: 1.4rem;
+              transition: all .4s ease-in-out;
+          }
+        }
+      }
+      .nav-container{
+        // background-color: red;
+        display: flex;
+
+      }
+      .menu-items{
+        font-size: 15px;
+        margin-left:5%;
+      }
+      .text{
+        font-size:15px;
+      }
+      .bottom-nav{
+        font-size:15px;
+      }
+    }
+      
+
+  }
+
 `;
 
 export default Navigation

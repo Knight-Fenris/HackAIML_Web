@@ -60,6 +60,24 @@ const ChartStyled = styled.div`
     padding: 1rem;
     border-radius: 20px;
     height: 100%;
+    @media(max-width:512px){
+        width:100%;
+        height: 30%;
+        font-size:50%;
+        display: block;
+        border-radius: 0 0px 0px 0;
+        align-item:center;
+    }
+
+    @media(min-width:512px) and (max-width:1024px){
+        width:100%;
+        height: 50%;
+        font-size:50%;
+        display: block;
+        border-radius: 0 0px 0px 0;
+        align-item:center;
+        padding-left:35%;
+    }
 `;
 
 export default Chart

@@ -73,9 +73,8 @@ const IncomesStyled = styled.div`
     } 
   }
   @media(min-width:512px) and (max-width:1024px){
-    IncomesStyled{
-      border:2px solid green;
-    }
+    border:2px solid green;
+
   }
 `
 

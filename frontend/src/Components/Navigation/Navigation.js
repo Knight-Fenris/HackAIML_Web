@@ -8,7 +8,6 @@ function Navigation({active,setActive}) {
   return (
     
     <NavStyled>
-      <div className='nav-container'>
       <div className="user-con">
         <img src={avatar} alt =''/>
         <div className="text">
@@ -30,7 +29,6 @@ function Navigation({active,setActive}) {
         <li>
             {signout} Sign Out
         </li>
-      </div>
       </div>
     </NavStyled>
   )
@@ -143,7 +141,7 @@ const NavStyled = styled.nav`
 
               border: 2px solid blue;
               width:10px;
-              postion:relative;
+              position:relative;
               opacity:0;
               color: rgba(34, 34, 96, 0.6);
               font-size: 0.5rem;
@@ -164,7 +162,7 @@ const NavStyled = styled.nav`
       .text{
         font-size:10px;
         border:2px solid green;
-        postion: relative;
+        position: relative;
         bottom:30%;
       }
       .bottom-nav{
@@ -182,7 +180,7 @@ const NavStyled = styled.nav`
       width:100%;
       height: 10%;
       font-size:50%;
-      display: block;
+      flex-direction: row;
       border-radius: 0 0px 0px 0;
       padding-bottom: 10%;
 
@@ -209,11 +207,6 @@ const NavStyled = styled.nav`
           }
         }
       }
-      .nav-container{
-        // background-color: red;
-        display: flex;
-
-      }
       .menu-items{
         font-size: 15px;
         margin-left:5%;
@@ -226,9 +219,6 @@ const NavStyled = styled.nav`
       }
     }
       
-
-  }
-
 `;
 
 export default Navigation

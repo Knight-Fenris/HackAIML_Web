@@ -7,17 +7,16 @@ import { useGlobalContext } from '../../Context/globalContext'
 import History from './History'
 
 function Dashboard() {
-  const {totalExpense,totalIncome,totalBalance,getExpense,getIncome,incomes,expenses} = useGlobalContext()
+  const {getData} = useGlobalContext()
   
   useEffect(() => {
-    getIncome()
-    getExpense()
+    getData()
   },[]
   )
   return (
     <DashboardStyled>
       <InnerLayout>
-        <h1>Al Transactions</h1>
+        <h1>All Scans</h1>
         <div className="stats-con">
           <div className="chart-con">
             <Chart/>
@@ -25,19 +24,19 @@ function Dashboard() {
               <div className="income">
                 <h2>Total Income</h2>
                 <p>
-                  {dollar} {totalIncome()}
+                  {dollar} {0}
                 </p>
               </div>
               <div className="expense">
                 <h2>Total Expense</h2>
                 <p>
-                  {dollar} {totalExpense()}
+                  {dollar} {0}
                 </p>
               </div>
               <div className="balance">
                 <h2>Total Balance</h2>
                 <p>
-                  {dollar} {totalBalance()}
+                  {dollar} {0}
                 </p>
               </div>
             </div>
@@ -47,19 +46,19 @@ function Dashboard() {
                 <h2 className="salary-title">Min <span>Salary</span>Max</h2>
                 <div className="salary-item">
                     <p>
-                        ${Math.min(...incomes.map(item => item.amount))}
+                        ${0}
                     </p>
                     <p>
-                        ${Math.max(...incomes.map(item => item.amount))}
+                        ${0}
                     </p>
                 </div>
                 <h2 className="salary-title">Min <span>Expense</span>Max</h2>
                 <div className="salary-item">
                     <p>
-                        ${Math.min(...expenses.map(item => item.amount))}
+                        ${0}
                     </p>
                     <p>
-                        ${Math.max(...expenses.map(item => item.amount))}
+                        ${0}
                     </p>
                 </div>
         </div>

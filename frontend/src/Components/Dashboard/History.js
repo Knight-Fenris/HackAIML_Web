@@ -3,13 +3,13 @@ import styled from 'styled-components'
 import { useGlobalContext } from '../../Context/globalContext';
 
 function History() {
-    const {transHistory} = useGlobalContext()
+    // const {transHistory} = useGlobalContext()
 
-    const[...history] = transHistory()
+    // const[...history] = transHistory()
     return (
         <HistoryStyled>
             <h2>Recent History</h2>
-            {history.map((item)=>{
+            {/* {history.map((item)=>{
                 const {_id,title,amount,type} = item
                 return(
                     
@@ -28,7 +28,7 @@ function History() {
                         </p>
                     </div>
                 )
-            })}
+            })} */}
         </HistoryStyled>
     )
 }

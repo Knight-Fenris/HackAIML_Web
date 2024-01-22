@@ -33,6 +33,17 @@ exports.getData = async(req,res)=>{
     }
 }
 
+exports.getUserData = async(req,res)=>{
+    const {id} = req.params;
+    console.log(id);
+    try {
+        const das = await dataSchema.find({"user": { $eq: id }}).sort({createdAt:1})
+        res.status(200).json(das)
+    } catch (error) {
+        res.status(500).json({message:'Server Error'})
+    }
+}
+
 exports.deleteData = async(req,res)=>{
     const {id} = req.params;
     console.log(req.params)

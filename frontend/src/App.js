@@ -15,8 +15,11 @@ import Ex_Form from './Components/Form/Exp_Form';
 function App() {
   const [active,setActive] = useState(1)
 
+  console.log("idk")
   const global = useGlobalContext()
   console.log(global)
+
+  
 
   const displayData = () =>{
     switch(active){

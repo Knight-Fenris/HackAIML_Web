@@ -11,9 +11,14 @@ export const GlobalProvider = ({children}) =>{
     const [active,setActive] = useState(1)
 
     const getData = async() =>{
-        const response = await axios.get(`${BASE_URL}get-data`)
-        setSites(response.data)
-        console.log(response.data)    
+        try{
+            const response = await axios.get(`${BASE_URL}get-data`)
+            setSites(response.data)
+            console.log(response.data)  
+        } catch(err){
+            console.log(err.response);
+        }
+          
     }
     
 

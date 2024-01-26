@@ -7,19 +7,24 @@ const GlobalContext = React.createContext()
 
 export const GlobalProvider = ({children}) =>{
     const [error,setError] = useState(null)
-    const [site, setSite] = useState([])
+    const [sites, setSites] = useState([])
+    const [active,setActive] = useState(1)
 
     const getData = async() =>{
-        // const response = await axios.get(`${BASE_URL}get-data`)
-        // setSite(response.data)
-        // console.log(response.data)    
+        const response = await axios.get(`${BASE_URL}get-data`)
+        setSites(response.data)
+        console.log(response.data)    
     }
     
 
     return(
         <GlobalContext.Provider value = {{
             getData,
-            setError
+            setError,
+            sites,
+            setSites,
+            active,
+            setActive,
         }}>
             {children}
         </GlobalContext.Provider>

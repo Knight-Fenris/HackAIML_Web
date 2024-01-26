@@ -4,21 +4,17 @@ import { bitcoin, calender, card, comment, dollar, freelance, money, piggy, stoc
 import Button from '../Button/Button'
 import { dateFormat } from '../utils/dateFormat'
 
-function ExpenseItem({
-    id,
-    title,
-    amount,
-    date,
-    category,
-    description,
-    deleteItem,
-    indicatorColor,
-    type
+function SiteItem({
+    user,
+    url,
+    pattern_id,
+    pattern_name
+
 }) {
 
-  const categoryIcon = () =>{
-    switch(category){
-        case 'salary': return money
+  const patternIcon = () =>{
+    switch(pattern_id){
+        case 1: return money
         case 'freelacing': return freelance
         case 'investments': return stocks
         case 'stocks': return users
@@ -29,42 +25,22 @@ function ExpenseItem({
         default: return ''
     }
   }
-  const expenseCatIcon = () => {
-    switch (category) {
-        case 'education':
-            return book;
-        case 'groceries':
-            return food;
-        case 'health':
-            return medical;
-        case 'subscriptions':
-            return tv;
-        case 'takeaways':
-            return takeaway;
-        case 'clothing':
-            return clothing;
-        case 'travelling':
-            return freelance;
-        case 'other':
-            return circle;
-        default:
-            return ''
-    }
-  }
+
 
 
   return (
-    <ExpenseItemStyled indicator={indicatorColor}>
+    <SiteItemStyled indicator={"#00ff00"}>
       <div className="icon">
-        {type==='expense' ?expenseCatIcon() : categoryIcon()}
+        {patternIcon()}
       </div>
         <div className="content">
-            <h5>{title}</h5>
+            <h5>{url}</h5>
             <div className="inner-content">
                 <div className="text">
-                    <p>{dollar} {amount}</p>
-                    <p>{calender} {dateFormat(date)}</p>
-                    <p>{comment} {description}</p>
+                    <p>User: {user}</p>
+                    <p>Date Scanned: </p>
+                    <p>Major Pattern: {pattern_name}</p>
+
                 </div>
                 <div className="btn-con">
                     <Button
@@ -75,16 +51,16 @@ function ExpenseItem({
                     color={'#fff'}
                     iColor={'#fff'}
                     hColor = {'var(--color-green)'}
-                    onClick={() =>deleteItem(id)}
+                    // onClick={() =>deleteItem(id)}
                     />
                 </div>
             </div>
         </div>
-    </ExpenseItemStyled>
+    </SiteItemStyled>
   )
 }
 
-const ExpenseItemStyled = styled.div`
+const SiteItemStyled = styled.div`
     background: #FCF6F9;
     border: 2px solid #FFFFFF;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
@@ -152,4 +128,4 @@ const ExpenseItemStyled = styled.div`
 `
 
 
-export default ExpenseItem
+export default SiteItem

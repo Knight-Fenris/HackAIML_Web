@@ -2,27 +2,51 @@ import React from 'react'
 
 import styled from 'styled-components'
 import {useGlobalContext} from '../../Context/globalContext'
+import SiteItem from './SiteItem'
+import { useEffect } from 'react'
 
 
 
-function Chart() {
+function Scans() {
 
-    const {incomes,expenses} = useGlobalContext()
+  const {getData,sites} = useGlobalContext()
+  
+  useEffect(() => {
+    getData()
+  },[]
+  )
 
   return (
-    <ChartStyled>
-
-    </ChartStyled>
+    <ScansStyled>
+      <div className='siteData'>
+        {sites.map((site)=>{
+          const {_id, user, url, patterns} = site;
+          return <SiteItem
+            key={_id}
+            user={user}
+            url = {url}
+            pattern_id={1}
+            pattern_name={"False Urgency"}
+          />
+          
+        })}
+      </div>
+    </ScansStyled>
   )
 }
 
-const ChartStyled = styled.div`
+const ScansStyled = styled.div`
     background: #FCF6F9;
     border: 2px solid #FFFFFF;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
     padding: 1rem;
     border-radius: 20px;
     height: 100%;
+    display:flex;
+    .siteData{
+      flex:1;
+    }
+
     @media(max-width:512px){
         width:100%;
         height: 30%;
@@ -43,4 +67,4 @@ const ChartStyled = styled.div`
     }
 `;
 
-export default Chart
+export default Scans

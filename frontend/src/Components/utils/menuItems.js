@@ -9,10 +9,11 @@ export const menuItems = [
     },
     {
     id:2,
-    title:'Feedback',
-    icon: transactions,
-    link: '/form'
-    },
+    title:'All Scans',
+    icon: expenses,
+    link: '/search'
+    }
+    ,
     {
     id:3,
     title:'Experience Form',
@@ -21,10 +22,11 @@ export const menuItems = [
     },
     {
     id:4,
-    title:'Expenses',
-    icon: expenses,
-    link: '/dashboard'
+    title:'Feedback',
+    icon: transactions,
+    link: '/form'
     }
+    
     
 ]
 

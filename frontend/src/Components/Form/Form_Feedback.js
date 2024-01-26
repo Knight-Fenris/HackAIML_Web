@@ -39,6 +39,9 @@ function Form() {
     return (
         <FormStyled onSubmit ={handleSubmit}>
             {error && <p className='error'>{error}</p>}
+            <div className="title">
+                Feedback Form
+            </div>
             <fieldset>
                 <label class="doubt"></label>
                     <select class="select" required>
@@ -77,12 +80,18 @@ const FormStyled = styled.form`
     flex-direction: column;
     gap: 2rem;
 
-    
+    .title{
+        margin: 2rem 2rem 0 2rem;
+    }
 
     fieldset {
         border: none;
-        padding: 2rem 0;
+        padding: 2rem 0 0 0 ;
         margin: 0 2rem;
+    }
+
+    .input-one{
+        margin-bottom: 2rem;
     }
   
     label {
@@ -129,18 +138,9 @@ const FormStyled = styled.form`
     }
 
     label {
-        
         margin-top: -25px;
         margin-left: 35px;
     }
-
-    
-
-
-    
-
-   
-    
 `
 
 export default Form

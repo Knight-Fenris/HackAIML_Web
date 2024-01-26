@@ -5,19 +5,21 @@ import Orb from './Components/Orb/orb';
 import Navigation from './Components/Navigation/Navigation';
 import { useState } from 'react';
 import Dashboard from './Components/Dashboard/Dashboard';
-import Incomes from './Components/Incomes/Incomes';
-import Expenses from './Components/Expenses/Expenses';
 import { useGlobalContext } from './Context/globalContext';
 import Form_Feedback from './Components/Form/Form_Feedback';
 import Ex_Form from './Components/Form/Exp_Form';
+import DisplayData from './Components/DisplayData/DisplayData';
 
 
 function App() {
-  const [active,setActive] = useState(1)
+  
 
   console.log("idk")
   const global = useGlobalContext()
   console.log(global)
+
+  const {active, setActive} = global
+  // revamp active setactive in nav to that of global context
 
   
 
@@ -26,11 +28,11 @@ function App() {
       case 1:
         return <Dashboard/>
       case 2:
-        return <Form_Feedback/>
+        return <DisplayData/>
       case 3:
         return <Ex_Form/>
       case 4:
-        return <Expenses/>
+        return <Form_Feedback/>
       default:
         return <Dashboard/>
     }

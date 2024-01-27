@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import avatar from '../../img/avatar.png'
 import { menuItems } from '../utils/menuItems';
 import { signout } from '../utils/icons';
+import { useGlobalContext } from '../../Context/globalContext';
 
 function Navigation({active,setActive}) {
+  const {getData,sites, getPatternNames, names} = useGlobalContext()
+  useEffect(() => {
+    getData()
+    getPatternNames()
+  },[]
+  )
+
   return (
     
     <NavStyled>

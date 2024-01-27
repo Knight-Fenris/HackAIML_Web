@@ -14,9 +14,9 @@ import DisplayData from './Components/DisplayData/DisplayData';
 function App() {
   
 
-  console.log("idk")
+  // console.log("idk")
   const global = useGlobalContext()
-  console.log(global)
+  // console.log(global)
 
   const {active, setActive} = global
   // revamp active setactive in nav to that of global context

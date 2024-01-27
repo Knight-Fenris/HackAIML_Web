@@ -7,12 +7,13 @@ import { useGlobalContext } from '../../Context/globalContext'
 import History from './History'
 
 function Dashboard() {
-  const {getData,sites} = useGlobalContext()
-  
+  const {getData,sites, names} = useGlobalContext()
   useEffect(() => {
     getData()
   },[]
   )
+
+  // console.log(names)
   return (
     
     <DashboardStyled>
@@ -74,6 +75,7 @@ function Dashboard() {
 }
 
 const DashboardStyled = styled.div`
+overflow: hidden;
 .dash-con{
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -91,6 +93,7 @@ const DashboardStyled = styled.div`
         }
         .stats-con{
           grid-column: 4/-1;
+          overflow: hidden;
           /* height:400px; */
           .amount-con{
             display: grid;

@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 
 function Scans() {
 
-  const {getData,sites} = useGlobalContext()
+  const {getData,sites, names} = useGlobalContext()
   
   useEffect(() => {
     getData()

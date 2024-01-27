@@ -27,16 +27,16 @@ function Ex_Form() {
     }
     return (
         <Ex_FormStyled onSubmit ={handleSubmit}>
-            {error && <p className='error'>{error}</p>}
+            {error && <p classNameName='error'>{error}</p>}
             <h1>Tell us about your experience</h1>
             <div>
-                {/* <legend for="Name">Your Name</legend>*/}<input type="text" class="intro" name="Name" placeholder="Enter your Name" required/>
+                {/* <legend for="Name">Your Name</legend>*/}<input type="text" className="intro" name="Name" placeholder="Enter your Name" required/>
             </div>
             <div> 
-                {/* <legend for="age">Your Age</legend>*/}<input type="number" class="intro" name="age" min="10" max="120" placeholder="Enter your Age" required/> 
+                {/* <legend for="age">Your Age</legend>*/}<input type="number" className="intro" name="age" min="10" max="120" placeholder="Enter your Age" required/> 
             </div>
             <div>
-                <legend for="gender">Your Gender</legend>
+                <legend htmlFor="gender">Your Gender</legend>
                 <select>
                     <option value="">Select an option</option>
                     <option value="1">Male</option>
@@ -45,13 +45,13 @@ function Ex_Form() {
                 </select>
             </div>
             <div>
-                <legend for="exp">How was your experience?</legend>
-                <label><input name="exp" value="ex" type="radio" class="exp" required/>Excellent</label>
-                <label><input name="exp" value="vgud" type="radio" class="exp" />Very Good</label>
-                <label><input name="exp" value="gud" type="radio" class="exp" />Good</label>
-                <label><input name="exp" value="sat" type="radio" class="exp" />Satisfactory</label>
+                <legend htmlFor="exp">How was your experience?</legend>
+                <label><input name="exp" value="ex" type="radio" className="exp" required/>Excellent</label>
+                <label><input name="exp" value="vgud" type="radio" className="exp" />Very Good</label>
+                <label><input name="exp" value="gud" type="radio" className="exp" />Good</label>
+                <label><input name="exp" value="sat" type="radio" className="exp" />Satisfactory</label>
 
-                <legend for="des"></legend>
+                <legend htmlFor="des"></legend>
                 <textarea name="exp" placeholder="Describe your experience..." rows="5" cols="36"></textarea>
 
             </div>

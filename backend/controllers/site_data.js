@@ -35,7 +35,7 @@ exports.getData = async(req,res)=>{
 
 exports.getUserData = async(req,res)=>{
     const {id} = req.params;
-    console.log(id);
+    // console.log(id);
     try {
         const das = await dataSchema.find({"user": { $eq: id }}).sort({createdAt:1})
         res.status(200).json(das)
@@ -54,4 +54,32 @@ exports.deleteData = async(req,res)=>{
         .catch((err)=>{
             res.status(500).json({message:'Server Error'})
         })
+}
+
+exports.postSearchUser = async(req,res)=>{
+    try{
+        const {user} = req.body;
+
+        const das = await dataSchema.find({"user" : { $regex: user, $options: 'i'}})
+        // console.log(das)
+        res.status(200).json(das)
+    } 
+    catch(err){
+        res.status(500).json({message:err.message})
+    }
+    
+}
+
+exports.postSearchUrl = async(req,res)=>{
+    try{
+        const {url} = req.body;
+
+        const das = await dataSchema.find({"url" : { $regex: url, $options: 'i'}})
+        // console.log(das)
+        res.status(200).json(das)
+    } 
+    catch(err){
+        res.status(500).json({message:err.message})
+    }
+    
 }
